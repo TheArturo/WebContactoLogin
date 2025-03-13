@@ -1,0 +1,94 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor del perfil */
+.profile-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    border: 2px solid #00ffff;
+}
+
+/* Título */
+.profile-container h2 {
+    font-size: 26px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 20px;
+}
+
+/* Ícono del perfil */
+.profile-icon {
+    font-size: 80px;
+    color: #00ffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #00ffff;
+}
+
+/* Elementos del perfil */
+.profile-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #ccc;
+}
+
+.profile-item i {
+    margin-right: 12px;
+    font-size: 20px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.profile-item span {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Botón de regreso */
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #00ffff, #008b8b);
+    color: black;
+    padding: 12px 24px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px #00ffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-back:hover {
+    background: linear-gradient(45deg, #ff00ff, #800080);
+    box-shadow: 0 0 30px #ff00ff;
+    transform: translateY(-3px);
+}
+
+.btn-back:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

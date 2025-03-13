@@ -1,0 +1,180 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor del login */
+.login-container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 2px solid #00ffff;
+}
+
+/* Título */
+.login-form h2 {
+    font-size: 24px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 20px;
+}
+
+/* Campos del formulario */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ffff;
+    font-size: 20px;
+}
+
+/* Inputs */
+.form-group input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    background-color: rgba(0, 255, 255, 0.1);
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+/* Botón */
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #00ffff, #008b8b);
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #ff00ff, #800080);
+    box-shadow: 0 0 30px #ff00ff;
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+.signup-link, .login-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.signup-link p, .login-link p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.signup-text, .login-text {
+    color: #00ffff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.signup-text:hover, .login-text:hover {
+    color: #ff00ff;
+    transform: scale(1.1);
+}
+
+/* Mostrar/Ocultar Contraseña */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #00ffff;
+    cursor: pointer;
+}
+/* Estilo del enlace "Olvidaste tu contraseña?" */
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #00ffff !important; /* Color cian neon */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s;
+}
+
+/* Efecto de brillo */
+.forgot-password:hover {
+    color: #ff00ff !important; /* Cambio a magenta al pasar el mouse */
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+
+/* Mensaje de error */
+.error-message {
+    color: #ff4d4d;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 1px solid #ff4d4d;
+    background-color: rgba(255, 77, 77, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Mensajes Flash */
+.flash-message {
+    background-color: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.95rem;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}

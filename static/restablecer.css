@@ -1,0 +1,143 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor del formulario */
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border: 2px solid #00ffff;
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+label {
+    font-size: 1rem;
+    color: #ccc;
+    text-align: left;
+}
+
+/* Campos de entrada */
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #00ffff;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.input-container input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Icono de mostrar contraseña */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #00ffff;
+    cursor: pointer;
+}
+
+/* Botón de restablecer */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #00ffff, #008b8b);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff00ff, #800080);
+    box-shadow: 0 0 30px #ff00ff;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Mensajes Flash */
+.flash-message {
+    background-color: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.95rem;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+/* Enlace de regreso */
+p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+p a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+    color: #ff00ff;
+}

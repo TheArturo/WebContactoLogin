@@ -1,0 +1,131 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Recuperar Contraseña Container */
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    width: 100%;
+    max-width: 450px;
+    border: 2px solid #00ffff;
+    position: relative;
+    text-align: center;
+}
+
+/* Form Title */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* Form Fields */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ffff;
+    font-size: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 14px 14px 45px;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: #ff00ff;
+}
+
+.form-group input::placeholder {
+    color: #ccc;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #00ffff, #008b8b);
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff00ff, #800080);
+    box-shadow: 0 0 30px #ff00ff;
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Flash Messages */
+.flash-message {
+    background: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 15px;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+.flash-message.success {
+    background: rgba(0, 255, 127, 0.2);
+    color: #00ff7f;
+    border: 1px solid #00ff7f;
+}
+
+.flash-message.error {
+    background: rgba(255, 0, 0, 0.2);
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}

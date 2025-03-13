@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <!-- Cargar Font Awesome desde CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css">
+    <script defer src="../static/app.js"></script>
+</head>
+<body>  
+    <div class="login-container">
+        <form class="login-form" action="/registro" method="POST">
+            <h2>Registro de Usuario</h2>
+            
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error-message">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>  
+            {% endif %}
+            {% endwith %}
+
+            <div class="form-group">
+                <i class="fas fa-user icon"></i>
+                <input type="text" name="usuario" placeholder="Nombre de Usuario" required>
+            </div>
+            
+            <div class="form-group">
+                <i class="fas fa-envelope icon"></i>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+            </div>
+            
+            <div class="form-group">
+                <i class="fas fa-lock icon"></i>
+                <input type="password" name="contrasena" id="password" placeholder="Contraseña" required>
+                <i class="toggle-password" id="togglePassword"></i>
+            </div>                              
+            
+            <button type="submit" class="btn">Registrarse</button>
+
+            <div class="login-link">
+                <p>¿Ya tienes cuenta? <a href="login" class="login-text">¡Inicia sesión aquí!</a></p>
+            </div>
+            
+        </form>
+    </div>
+</body>
+</html>

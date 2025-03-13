@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="../static/app.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            {{ usuario if usuario else "Una página web más" }}
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">INICIO</a></li>
+            <li><a href="#servicios">SERVICIOS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+            <li><a href="#acerca">ACERCA DE MÍ</a></li>
+
+            {% if usuario %}
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">
+                    <i class="fas fa-user"></i> {{ usuario }}
+                </a>
+                <div class="dropdown-content">
+                    <a href="/mi_perfil"><i class="fas fa-user"></i> Mi Perfil</a>
+                    <a href="/logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                </div>
+            </li>
+            
+            {% endif %}
+        </ul>
+        <button class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <header id="inicio" class="hero-section">
+        <h1>Bienvenido a Mi Espacio Web</h1>
+        <p>Aquí comparto mis conocimientos, experiencias y servicios.</p>
+        <a href="#servicios" class="btn-primary">Explorar Más</a>
+    </header>
+
+    <main>
+        <section id="servicios" class="cards-container">
+            <h2>¿Qué Ofrezco?</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios web modernos y funcionales.</p>
+                </div>
+                <div class="card">
+                    <h3>Asesoría Tecnológica</h3>
+                    <p>Guía en la implementación de herramientas digitales.</p>
+                </div>
+                <div class="card">
+                    <h3>Soluciones Personalizadas</h3>
+                    <p>Adaptación de tecnología a tus necesidades específicas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto -->
+<section id="contacto" class="contact-section">
+    <h2>Contáctame</h2>
+    <form id="contact-form" method="POST" action="/send_email">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="correo" placeholder="Correo Electrónico" required>
+        <textarea name="mensaje" placeholder="Escríbeme tu consulta" required></textarea>
+        
+        <!-- Botón de enviar -->
+        <button type="submit" class="btn-primary">Enviar</button>
+
+        <!-- Mensaje flash justo debajo del botón -->
+        <div id="flash-container"></div>
+    </form>
+</section>
+
+
+
+        <div id="flash-messages" class="flash-messages"></div>
+        
+        <section id="acerca" class="about-section">
+            <h2>Sobre Mí</h2>
+            <p>Soy un apasionado de la tecnología y la innovación, enfocado en el desarrollo de soluciones digitales que faciliten la vida de las personas y empresas.</p>
+            <p>Desde programación hasta asesoramiento tecnológico, mi objetivo es crear herramientas eficientes y accesibles para todos.</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 TuPáginaWeb. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Botón hamburguesa
+            const burger = document.querySelector(".burger");
+            const navLinks = document.querySelector(".nav-links");
+
+            burger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+
+            // Manejo del formulario de contacto
+            const contactForm = document.getElementById("contact-form");
+
+            if (contactForm) {
+                contactForm.addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    const submitButton = this.querySelector('button[type="submit"]');
+                    submitButton.classList.add("loading");
+
+                    const formData = new FormData(this);
+
+                    fetch("/send_email", {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        showFlashMessage("Mensaje enviado correctamente.", "success");
+                        this.reset();
+                        submitButton.classList.remove("loading");
+                    })
+                    .catch(error => {
+                        showFlashMessage("Hubo un error al enviar el mensaje.", "danger");
+                        console.error("Error:", error);
+                        submitButton.classList.remove("loading");
+                    });
+                });
+            }
+
+            // Mostrar mensajes flash
+            function showFlashMessage(message, category) {
+                const flashContainer = document.getElementById("flash-messages");
+                const flashMessage = document.createElement("div");
+                flashMessage.className = `alert ${category}`;
+                flashMessage.textContent = message;
+
+                flashContainer.appendChild(flashMessage);
+
+                setTimeout(() => {
+                    flashMessage.remove();
+                }, 5000);
+            }
+        });
+    </script>
+</body>
+</html>
